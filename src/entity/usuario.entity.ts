@@ -8,19 +8,19 @@ import { Formacion } from './formacion.entity';
 import { Proyecto } from './proyecto.entity';
 import { EventoUsuario } from './eventoUsuario.entity';
 import { SolicitudColaborador } from './colaboradores.entity';
-
 export enum RolUsuario {
     ESTUDIANTE = 'Estudiante',
     INVESTIGADOR = 'Investigador',
-    LIDER = 'LIDER'
+    LIDER = 'Lider'
 }
 
 
 
 @Entity('usuarios')
 export class Usuario {
+    
     @PrimaryGeneratedColumn()
-    id!: number;
+    id!: number
 
     @Column({ type: 'varchar', length: 255 })
     nombre!: string;
@@ -31,7 +31,7 @@ export class Usuario {
     @Column({ type: 'date' })
     fecha_nacimiento!: string;
 
-    @Column({ type: 'int' })
+    @Column({ type: 'bigint', unique: true })
     dni!: number;
 
     @Column({
@@ -41,7 +41,7 @@ export class Usuario {
     })
     rol!: RolUsuario;
 
-    @Column({ type: 'varchar', length: 255 })
+    @Column({ type: 'varchar' })
     url_foto_perfil!: string;
 
 
@@ -81,5 +81,8 @@ export class Usuario {
 
     @OneToMany(() => SolicitudColaborador, (solicitud) => solicitud.colaborador)
     solicitudes_enviadas!: SolicitudColaborador[];
+
+   
+    
    
 }

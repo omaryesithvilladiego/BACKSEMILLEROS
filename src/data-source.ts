@@ -23,7 +23,7 @@ export const AppDataSource = new DataSource({
     password: PASSWORD,    // Esto será '0898'
     database: DATABASE,    // Esto será 'petsite'
     synchronize: true,
-    dropSchema: false,
+    dropSchema: true,
     logging: true,
     entities: [Usuario, DatosContacto, DatosSemillero, DatosUniversidad, Credenciales,LinksAccesoDirecto, Formacion, Proyecto, EventoUsuario, Evento, Compromiso, SolicitudColaborador, Entrega, Ponencia, Articulo, Premios],
     subscribers: [],

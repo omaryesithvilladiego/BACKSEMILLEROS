@@ -5,8 +5,7 @@ export class DatosUniversidad {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ type: 'varchar', length: 255 })
-    correo_institucional!: string;
+    
 
     @Column({ type: 'varchar', length: 255 })
     carrera!: string;
