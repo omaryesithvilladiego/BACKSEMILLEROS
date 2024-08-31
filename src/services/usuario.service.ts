@@ -3,7 +3,6 @@ import IcreateUserDto from "../dtos/createUserDto";
 import { DatosContacto } from "../entity/datosContacto.entity";
 import { RolUsuario, Usuario } from "../entity/usuario.entity";
 import { usuarioRepository } from "../repositories/index.repository";
-import { uploadImage } from "./cloudinary.service";
 import { createDatosContactoService } from "./datosContacto.service";
 import {  uploadFileToFirebaseStorage } from "./firebase.service";
 
