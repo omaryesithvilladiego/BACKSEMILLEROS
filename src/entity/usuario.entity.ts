@@ -41,7 +41,7 @@ export class Usuario {
     })
     rol!: RolUsuario;
 
-    @Column({ type: 'varchar' })
+    @Column({ type: 'varchar', nullable:true })
     url_foto_perfil!: string;
 
 

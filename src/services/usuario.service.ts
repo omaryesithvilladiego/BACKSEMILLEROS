@@ -5,6 +5,7 @@ import { RolUsuario, Usuario } from "../entity/usuario.entity";
 import { usuarioRepository } from "../repositories/index.repository";
 import { uploadImage } from "./cloudinary.service";
 import { createDatosContactoService } from "./datosContacto.service";
+import {  uploadFileToFirebaseStorage } from "./firebase.service";
 
 
 export const obetenerUsuariosService = async ():Promise<Usuario[]> => {
@@ -50,9 +51,8 @@ export const createUserService = async (createUserDto: IcreateUserDto) => {
             });
 
             const userFoundDni: Usuario | null = await transactionalEntityManager.findOne(Usuario, {
-                where: { dni}
+                where: { dni }
             });
-
 
             if (userFound || userFoundDni) {
                 throw new Error('El usuario ya se encuentra registrado');
@@ -65,10 +65,6 @@ export const createUserService = async (createUserDto: IcreateUserDto) => {
                 throw new Error('No se pudieron obtener los datos de contacto');
             }
 
-            const image = await uploadImage(url_foto_perfil, dni)
-            if(!image) throw new Error('Hubo un error al obtener la imagen del servidor')
-           
-            
             // Crear el nuevo usuario
             const newUser = transactionalEntityManager.create(Usuario, {
                 nombre,
@@ -77,13 +73,22 @@ export const createUserService = async (createUserDto: IcreateUserDto) => {
                 dni,
                 rol: rol as RolUsuario,
                 datos_contacto: newDatosContacto,
-                url_foto_perfil:image
             });
 
-            // Guardar el nuevo usuario
-            const userCreated: Usuario = await transactionalEntityManager.save(Usuario, newUser);
+            // Guardar el nuevo usuario y obtener su ID
+            const userCreated: Usuario = await transactionalEntityManager.save(newUser);
 
-            return userCreated;
+            // Subir la imagen pasando el URL y el ID del usuario
+            const imageUrl  = await uploadFileToFirebaseStorage(url_foto_perfil, String(userCreated.id) );
+            if (!imageUrl) throw new Error('Hubo un error al obtener la imagen del servidor');
+            console.log(imageUrl);
+            
+            // Actualizar el campo url_foto_perfil del usuario
+            userCreated.url_foto_perfil = imageUrl
+
+            const updatedUser: Usuario = await transactionalEntityManager.save(userCreated);
+
+            return updatedUser;
         });
 
         return userCreated;

@@ -24,7 +24,7 @@ export const AppDataSource = new DataSource({
     database: DATABASE,    // Esto será 'petsite'
     synchronize: true,
     dropSchema: true,
-    logging: true,
+    logging: false,
     entities: [Usuario, DatosContacto, DatosSemillero, DatosUniversidad, Credenciales,LinksAccesoDirecto, Formacion, Proyecto, EventoUsuario, Evento, Compromiso, SolicitudColaborador, Entrega, Ponencia, Articulo, Premios],
     subscribers: [],
     migrations: [],

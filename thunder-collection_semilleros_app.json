@@ -1,0 +1,144 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "semilleros_app",
+    "collectionId": "8beeaba4-b952-4e2d-bfdc-5561a5f80645",
+    "dateExported": "2024-08-31T16:57:40.176Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "e58a49ed-af1f-451a-9cf1-39795cfbd384",
+            "name": "colaboradores",
+            "containerId": "",
+            "created": "2024-08-28T00:05:24.981Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "6a63db80-e038-422a-8a93-96b94755248c",
+            "name": "entregas",
+            "containerId": "",
+            "created": "2024-08-28T00:05:54.790Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "12566171-d20b-4c9b-82fc-07dbe5c7bb8a",
+            "name": "compromisos",
+            "containerId": "",
+            "created": "2024-08-28T00:06:35.342Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "2e9a178c-5aad-4afb-a3f0-96e0065750d1",
+            "name": "eventos_usuarios",
+            "containerId": "",
+            "created": "2024-08-28T00:07:02.674Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "fa512aec-9b7f-48c7-b2d5-045e9cad5c49",
+            "name": "proyectos",
+            "containerId": "",
+            "created": "2024-08-28T00:07:15.923Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "9216595f-2143-45d1-88e6-73aa761992d5",
+            "name": "eventos",
+            "containerId": "",
+            "created": "2024-08-28T00:07:25.812Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "0cb0428f-aafe-484d-a4f7-5d88e3e9d296",
+            "name": "formaciones",
+            "containerId": "",
+            "created": "2024-08-28T00:07:37.001Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "73115f16-00e9-4bf6-9563-6916081fa0a9",
+            "name": "links_acceso_directo",
+            "containerId": "",
+            "created": "2024-08-28T00:07:55.121Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "c4318a00-b735-4c94-9392-9992fd0b036a",
+            "name": "credenciales_user",
+            "containerId": "",
+            "created": "2024-08-28T00:08:09.900Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "8e384ca6-d740-45c1-9f7c-92f815285b34",
+            "name": "datos_universidad_user",
+            "containerId": "",
+            "created": "2024-08-28T00:08:24.421Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "93ca6dc6-7204-4db8-b9ec-45cd132df83f",
+            "name": "datos_semillero_user",
+            "containerId": "",
+            "created": "2024-08-28T00:08:39.988Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "4630c056-97f5-47d0-8f06-876e64382788",
+            "name": "usuarios",
+            "containerId": "",
+            "created": "2024-08-28T00:09:11.812Z",
+            "sortNum": 120000
+        },
+        {
+            "_id": "aef2f021-8fe8-4c80-8a94-bb58a8cc788c",
+            "name": "datos_contacto_user",
+            "containerId": "",
+            "created": "2024-08-28T00:11:28.182Z",
+            "sortNum": 130000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "17389699-b80f-4212-bbb1-0c0abdf7dfce",
+            "colId": "8beeaba4-b952-4e2d-bfdc-5561a5f80645",
+            "containerId": "4630c056-97f5-47d0-8f06-876e64382788",
+            "name": "obtener-usuarios",
+            "url": "http://localhost:3000/users/get",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-08-28T00:09:23.328Z",
+            "modified": "2024-08-29T04:31:42.066Z",
+            "headers": []
+        },
+        {
+            "_id": "9c1fe09d-22b9-4ac3-a12f-b2fc2dc270a8",
+            "colId": "8beeaba4-b952-4e2d-bfdc-5561a5f80645",
+            "containerId": "4630c056-97f5-47d0-8f06-876e64382788",
+            "name": "obtener-usuario-id",
+            "url": "http://localhost:3000/users/get-user/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-08-28T00:11:05.963Z",
+            "modified": "2024-08-28T03:51:30.291Z",
+            "headers": []
+        },
+        {
+            "_id": "898756b8-6084-4ce3-864e-a3e3ff5f35ec",
+            "colId": "8beeaba4-b952-4e2d-bfdc-5561a5f80645",
+            "containerId": "4630c056-97f5-47d0-8f06-876e64382788",
+            "name": "crear-usuario",
+            "url": "http://localhost:3000/users/create",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-08-29T04:31:05.046Z",
+            "modified": "2024-08-30T21:24:48.261Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "\n{\n    \"nombre\": \"Sofía\",\n    \"apellido\": \"Fernández\",\n    \"fecha_nacimiento\": \"1998-05-18\",\n    \"dni\": 7890123456,\n    \"rol\": \"Investigador\",\n    \"celular\": 3127890123,\n    \"departamento\": \"California\",\n    \"ciudad\": \"Los Ángeles\",\n    \"pais\": \"Estados Unidos\",\n    \"correo_institucional\": \"sofia.fernandez@college.edu.us\",\n    \"url_foto_perfil\": \"/home/omar/Downloads/Inicio.pdf.pdf\"\n}\n\n\n",
+                "form": []
+            }
+        }
+    ],
+    "ref": "IX64_9DOEZ1mglcwd82A_eymjlBvLaz2x76wHrJQlN7z5zi1PqMuICGTDE7O6XbHi8dUTrKkOZEuK2IgKBKWiw"
+}
